@@ -1,9 +1,9 @@
 {
-    "workbench.colorTheme": "Palenight Operator",
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Palenight Italic",
+    "workbench.iconTheme": "eq-material-theme-icons-palenight",
     "editor.fontSize": 13,
     "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
-    "editor.lineHeight": 30,
+    "editor.lineHeight": 25,
     "files.autoSave": "onFocusChange",
     "vsicons.dontShowNewVersionMessage": true,
     "auto-close-tag.enableAutoCloseTag": true,
@@ -44,5 +44,5 @@
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.historyExplorer.enabled": true,
-    "materialTheme.fixIconsRunning": false,
+    "materialTheme.fixIconsRunning": false
 }
