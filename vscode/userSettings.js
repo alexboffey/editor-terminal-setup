@@ -1,4 +1,6 @@
+// Place your settings in this file to overwrite the default settings
 {
+    "terminal.integrated.shell.osx": "zsh",
     "workbench.colorTheme": "Palenight Italic",
     "workbench.iconTheme": "eq-material-theme-icons-palenight",
     "editor.fontSize": 13,
@@ -44,5 +46,5 @@
         "suppressShowKeyBindingsNotice": true
     },
     "gitlens.historyExplorer.enabled": true,
-    "materialTheme.fixIconsRunning": false
+    "materialTheme.fixIconsRunning": false,
 }
