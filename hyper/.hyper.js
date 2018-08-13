@@ -101,7 +101,7 @@ module.exports = {
     //
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    shell: '',
+    shell: 'zsh',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
@@ -111,7 +111,7 @@ module.exports = {
     env: {},
 
     // set to `false` for no bell
-    bell: false,
+    bell: 'false',
 
     // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
     copyOnSelect: false,
@@ -136,6 +136,8 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
+    //'hyper-night-owl',
+    //'hyperterm-cobalt2-theme',
     'hyper-material-theme',
     'hypercwd',
     'hyper-search'
