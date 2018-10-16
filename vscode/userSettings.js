@@ -10,6 +10,9 @@
     "vsicons.dontShowNewVersionMessage": true,
     "auto-close-tag.enableAutoCloseTag": true,
     "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
     "window.zoomLevel": 0,
     "workbench.colorCustomizations": {
         "activityBarBadge.background": "#80CBC4",
