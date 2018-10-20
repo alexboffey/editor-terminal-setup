@@ -36,7 +36,8 @@
     "prettier.tabWidth": 4,
     "gitlens.keymap": "alternate",
     "files.associations": {
-        "*.pcss": "postcss"
+        "*.pcss": "postcss",
+        "*.prisma": "graphql"
     },
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
