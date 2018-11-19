@@ -2,7 +2,7 @@
 {
     "terminal.integrated.shell.osx": "zsh",
     "workbench.colorTheme": "Night Owl",
-    "workbench.iconTheme": "eq-material-theme-icons-palenight",
+    "workbench.iconTheme": "material-icon-theme",
     "editor.fontSize": 13,
     "editor.fontFamily": "Fira Code, Menlo, Monaco, Consolas, 'Courier New', monospace",
     "editor.lineHeight": 25,
