@@ -1,10 +1,10 @@
 // Place your settings in this file to overwrite the default settings
 {
     "terminal.integrated.shell.osx": "zsh",
-    "workbench.colorTheme": "Palenight Italic",
+    "workbench.colorTheme": "Night Owl",
     "workbench.iconTheme": "eq-material-theme-icons-palenight",
     "editor.fontSize": 13,
-    "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "Fira Code, Menlo, Monaco, Consolas, 'Courier New', monospace",
     "editor.lineHeight": 25,
     "files.autoSave": "onFocusChange",
     "vsicons.dontShowNewVersionMessage": true,
@@ -27,13 +27,11 @@
         "tab.activeBorder": "#80CBC4"
     },
     "git.autofetch": true,
-    "materialTheme.cache.workbench.settings": {
-        "themeColours": "Palenight"
-    },
     "php.suggest.basic": false,
     "editor.formatOnSave": false,
+    "editor.tabSize": 2,
     "prettier.stylelintIntegration": true,
-    "prettier.tabWidth": 4,
+    "prettier.tabWidth": 2,
     "gitlens.keymap": "alternate",
     "files.associations": {
         "*.pcss": "postcss",
@@ -49,6 +47,5 @@
         "suppressResultsExplorerNotice": false,
         "suppressShowKeyBindingsNotice": true
     },
-    "gitlens.historyExplorer.enabled": true,
-    "materialTheme.fixIconsRunning": false,
+    "gitlens.historyExplorer.enabled": true
 }
