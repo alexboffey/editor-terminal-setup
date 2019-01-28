@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 14,
+    fontSize: 13,
 
     // font family with optional fallbacks
     fontFamily: 'Fira Code, Consolas, "Lucida Console", monospace',
@@ -103,7 +103,8 @@ module.exports = {
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
     // shell: 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe',
     
-    shell: 'C:\\Program Files\\Git\\git-cmd.exe',
+    // shell: 'C:\\Program Files\\Git\\git-cmd.exe',
+    shell: 'C:\\Users\\alex.boffey\\AppData\\Local\\Programs\\Git\\git-cmd.exe',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
