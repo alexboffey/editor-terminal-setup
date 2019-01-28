@@ -1,0 +1,13 @@
+2gua.rainbow-brackets
+dbaeumer.vscode-eslint
+eamodio.gitlens
+EditorConfig.EditorConfig
+eg2.tslint
+esbenp.prettier-vscode
+formulahendry.auto-close-tag
+formulahendry.auto-rename-tag
+PKief.material-icon-theme
+robertohuertasm.vscode-icons
+sdras.night-owl
+xabikos.ReactSnippets
+yzhang.markdown-all-in-one
