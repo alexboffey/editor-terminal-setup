@@ -5,6 +5,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "editor.fontSize": 13,
     "editor.fontFamily": "Fira Code, Consolas, monospace",
+    "editor.fontLigatures": true,
     "editor.lineHeight": 25,
     "files.autoSave": "onFocusChange",
     "auto-close-tag.enableAutoCloseTag": true,
