@@ -5,6 +5,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "editor.fontSize": 13,
     "editor.fontFamily": "Fira Code, Menlo, Monaco, Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
     "editor.lineHeight": 25,
     "files.autoSave": "onFocusChange",
     "vsicons.dontShowNewVersionMessage": true,
