@@ -3,7 +3,6 @@
     // "terminal.integrated.shell.osx": "zsh",
     "workbench.colorTheme": "Night Owl No Italics",
     "workbench.iconTheme": "material-icon-theme",
-    "editor.fontSize": 13,
     "editor.fontFamily": "Fira Code, Consolas, monospace",
     "editor.fontLigatures": true,
     "editor.lineHeight": 25,
@@ -50,6 +49,8 @@
     // "markdown.extension.preview.autoShowPreviewToSide": true,
     "gitlens.views.fileHistory.enabled": true,
     "gitlens.views.lineHistory.enabled": true,
-    // "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-    "terminal.integrated.shell.windows": "C:\\Users\\alex.boffey\\AppData\\Local\\Programs\\Git\\bin\\bash.exe"
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "terminal.integrated.fontSize": 13,
+    "editor.fontSize": 13,
+    // "terminal.integrated.shell.windows": "C:\\Users\\alex.boffey\\AppData\\Local\\Programs\\Git\\bin\\bash.exe"
 }
