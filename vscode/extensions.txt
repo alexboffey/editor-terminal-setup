@@ -6,8 +6,9 @@ eg2.tslint
 esbenp.prettier-vscode
 formulahendry.auto-close-tag
 formulahendry.auto-rename-tag
+pflannery.vscode-versionlens
 PKief.material-icon-theme
-robertohuertasm.vscode-icons
 sdras.night-owl
+whizkydee.material-palenight-theme
 xabikos.ReactSnippets
 yzhang.markdown-all-in-one
