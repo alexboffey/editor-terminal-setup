@@ -1,7 +1,5 @@
 // Place your settings in this file to overwrite the default settings
 {
-    // "terminal.integrated.shell.osx": "zsh",
-    "workbench.colorTheme": "Night Owl No Italics",
     "workbench.iconTheme": "material-icon-theme",
     "editor.fontFamily": "Fira Code, Consolas, monospace",
     "editor.fontLigatures": true,
@@ -29,11 +27,12 @@
     "php.suggest.basic": false,
     "editor.formatOnSave": false,
     "editor.tabSize": 2,
-    "prettier.stylelintIntegration": true,
     "prettier.tabWidth": 2,
     "gitlens.keymap": "alternate",
     "files.associations": {
-        "*.pcss": "postcss"
+        "*.pcss": "postcss",
+        ".sample.deployrc": "json",
+        ".deployrc": "json"
     },
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
@@ -49,8 +48,29 @@
     // "markdown.extension.preview.autoShowPreviewToSide": true,
     "gitlens.views.fileHistory.enabled": true,
     "gitlens.views.lineHistory.enabled": true,
-    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    // "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+    "terminal.integrated.shellArgs.windows": ["/K", "C:\\Users\\alex.boffey\\cmder\\vendor\\init.bat"],
     "terminal.integrated.fontSize": 13,
     "editor.fontSize": 13,
-    // "terminal.integrated.shell.windows": "C:\\Users\\alex.boffey\\AppData\\Local\\Programs\\Git\\bin\\bash.exe"
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.colorTheme": "Night Owl",
+    "cSpell.language": "en_GB"
 }
