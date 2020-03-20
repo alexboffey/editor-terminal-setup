@@ -85,10 +85,6 @@ module.exports = {
       lightWhite: '#FFFFFF',
     },
 
-    MaterialTheme: {
-        theme: 'Palenight',
-    },
-
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
     //
@@ -136,9 +132,7 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    //'hyper-night-owl',
-    //'hyperterm-cobalt2-theme',
-    'hyper-material-theme',
+    'hyper-night-owl',
     'hypercwd',
     'hyper-search'
   ],
