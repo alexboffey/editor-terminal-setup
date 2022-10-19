@@ -1,31 +1,32 @@
-2gua.rainbow-brackets
-aaronthomas.vscode-snazzy-operator
-alexanderbast.vscode-snazzy
-bradlc.vscode-tailwindcss
-csstools.postcss
-dbaeumer.vscode-eslint
-divyansh.React-Snippets
-eamodio.gitlens
-EditorConfig.EditorConfig
-esbenp.prettier-vscode
-formulahendry.auto-close-tag
-formulahendry.auto-rename-tag
-GitHub.copilot
-liviuschera.noctis
-loilo.snazzy-light
-me-dutour-mathieu.vscode-github-actions
-ms-azuretools.vscode-docker
-ms-vsliveshare.vsliveshare
-naumovs.color-highlight
-Orta.vscode-jest
-pflannery.vscode-versionlens
-PKief.material-icon-theme
-Prisma.prisma
-quicktype.quicktype
-redhat.vscode-yaml
-sdras.night-owl
-silvenon.mdx
-streetsidesoftware.code-spell-checker
-styled-components.vscode-styled-components
-whizkydee.material-palenight-theme
-yzhang.markdown-all-in-one
+code --list-extensions | xargs -L 1 echo code --install-extension
+code --install-extension 2gua.rainbow-brackets
+code --install-extension aaronthomas.vscode-snazzy-operator
+code --install-extension alexanderbast.vscode-snazzy
+code --install-extension bradlc.vscode-tailwindcss
+code --install-extension csstools.postcss
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension divyansh.React-Snippets
+code --install-extension eamodio.gitlens
+code --install-extension EditorConfig.EditorConfig
+code --install-extension esbenp.prettier-vscode
+code --install-extension formulahendry.auto-close-tag
+code --install-extension formulahendry.auto-rename-tag
+code --install-extension GitHub.copilot
+code --install-extension liviuschera.noctis
+code --install-extension loilo.snazzy-light
+code --install-extension me-dutour-mathieu.vscode-github-actions
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-vsliveshare.vsliveshare
+code --install-extension naumovs.color-highlight
+code --install-extension Orta.vscode-jest
+code --install-extension pflannery.vscode-versionlens
+code --install-extension PKief.material-icon-theme
+code --install-extension Prisma.prisma
+code --install-extension quicktype.quicktype
+code --install-extension redhat.vscode-yaml
+code --install-extension sdras.night-owl
+code --install-extension silvenon.mdx
+code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension styled-components.vscode-styled-components
+code --install-extension whizkydee.material-palenight-theme
+code --install-extension yzhang.markdown-all-in-one
