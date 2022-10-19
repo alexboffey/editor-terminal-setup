@@ -1,4 +1,3 @@
-code --list-extensions | xargs -L 1 echo code --install-extension
 code --install-extension 2gua.rainbow-brackets
 code --install-extension aaronthomas.vscode-snazzy-operator
 code --install-extension alexanderbast.vscode-snazzy
