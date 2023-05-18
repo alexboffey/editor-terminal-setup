@@ -1,51 +1,85 @@
 {
-    "terminal.integrated.shell.osx": "zsh",
-    "workbench.colorTheme": "Night Owl",
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.fontSize": 13,
-    "editor.fontFamily": "Fira Code, Menlo, Monaco, Consolas, 'Courier New', monospace",
-    "editor.fontLigatures": true,
-    "editor.lineHeight": 25,
-    "files.autoSave": "onFocusChange",
-    "auto-close-tag.enableAutoCloseTag": true,
-    "emmet.triggerExpansionOnTab": true,
-    "emmet.includeLanguages": {
-        "javascript": "javascriptreact"
-    },
-    "window.zoomLevel": 0,
-    "workbench.colorCustomizations": {
-        "activityBarBadge.background": "#80CBC4",
-        "list.activeSelectionForeground": "#80CBC4",
-        "list.inactiveSelectionForeground": "#80CBC4",
-        "list.highlightForeground": "#80CBC4",
-        "scrollbarSlider.activeBackground": "#80CBC450",
-        "editorSuggestWidget.highlightForeground": "#80CBC4",
-        "textLink.foreground": "#80CBC4",
-        "progressBar.background": "#80CBC4",
-        "pickerGroup.foreground": "#80CBC4",
-        "tab.activeBorder": "#80CBC4"
-    },
-    "git.autofetch": true,
-    "php.suggest.basic": false,
-    "editor.formatOnSave": false,
-    "editor.tabSize": 2,
-    "prettier.tabWidth": 2,
-    "gitlens.keymap": "alternate",
-    "files.associations": {
-        "*.pcss": "postcss",
-        "*.prisma": "graphql"
-    },
-    "gitlens.advanced.messages": {
-        "suppressCommitHasNoPreviousCommitWarning": false,
-        "suppressCommitNotFoundWarning": false,
-        "suppressFileNotUnderSourceControlWarning": false,
-        "suppressGitVersionWarning": false,
-        "suppressLineUncommittedWarning": false,
-        "suppressNoRepositoryWarning": false,
-        "suppressResultsExplorerNotice": false,
-        "suppressShowKeyBindingsNotice": true
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
+  "terminal.integrated.shell.osx": "zsh",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Fira Code, Menlo, Monaco, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 25,
+  "files.autoSave": "onFocusChange",
+  "auto-close-tag.enableAutoCloseTag": true,
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "workbench.colorCustomizations": {
+    "activityBarBadge.background": "#80CBC4",
+    "list.activeSelectionForeground": "#80CBC4",
+    "list.inactiveSelectionForeground": "#80CBC4",
+    "list.highlightForeground": "#80CBC4",
+    "scrollbarSlider.activeBackground": "#80CBC450",
+    "editorSuggestWidget.highlightForeground": "#80CBC4",
+    "textLink.foreground": "#80CBC4",
+    "progressBar.background": "#80CBC4",
+    "pickerGroup.foreground": "#80CBC4",
+    "tab.activeBorder": "#80CBC4"
+  },
+  "git.autofetch": true,
+  "php.suggest.basic": false,
+  "editor.tabSize": 2,
+  "prettier.tabWidth": 2,
+  "gitlens.keymap": "alternate",
+  "files.associations": {
+    "*.pcss": "postcss",
+    "*.prisma": "prisma"
+  },
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false,
+    "suppressResultsExplorerNotice": false,
+    "suppressShowKeyBindingsNotice": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.confirmSync": false,
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": false
+  },
+  "editor.inlineSuggest.enabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDelete": false,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Noctis Lux",
+  "debug.javascript.autoAttachFilter": "smart"
 }
