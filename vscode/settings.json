@@ -2,7 +2,7 @@
   "terminal.integrated.shell.osx": "zsh",
   "workbench.iconTheme": "material-icon-theme",
   "editor.fontSize": 14,
-  "editor.fontFamily": "Fira Code, Menlo, Monaco, Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "Monaspace Neon Var, Fira Code, Menlo, Monaco, Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.lineHeight": 25,
   "files.autoSave": "onFocusChange",
@@ -24,7 +24,6 @@
     "tab.activeBorder": "#80CBC4"
   },
   "git.autofetch": true,
-  "php.suggest.basic": false,
   "editor.tabSize": 2,
   "prettier.tabWidth": 2,
   "gitlens.keymap": "alternate",
@@ -80,6 +79,6 @@
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Noctis Lux",
+  "workbench.colorTheme": "Ayu Adapta",
   "debug.javascript.autoAttachFilter": "smart"
 }
