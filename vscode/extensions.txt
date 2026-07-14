@@ -32,3 +32,4 @@ code --install-extension whizkydee.material-palenight-theme
 code --install-extension yzhang.markdown-all-in-one
 code --install-extension teabyii.ayu
 code --install-extension ccy.ayu-adaptive
+code --install-extension daltonmenezes.aura-theme
