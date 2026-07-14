@@ -1,0 +1,25 @@
+#!/bin/sh
+# Toggle themes: Aura Dark / Aura  <->  Noctis Lux / noctis-lux
+# VS Code picks up settings.json changes live; Ghostty is reloaded via its menu item.
+set -e
+
+VSCODE_SETTINGS="$HOME/Library/Application Support/Code/User/settings.json"
+GHOSTTY_CONFIG="$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
+
+if grep -q '"workbench.colorTheme": "Aura Dark"' "$VSCODE_SETTINGS"; then
+  VSCODE_THEME="Noctis Lux"
+  GHOSTTY_THEME="noctis-lux"
+else
+  VSCODE_THEME="Aura Dark"
+  GHOSTTY_THEME="Aura"
+fi
+
+sed -i '' "s/\"workbench.colorTheme\": \"[^\"]*\"/\"workbench.colorTheme\": \"$VSCODE_THEME\"/" "$VSCODE_SETTINGS"
+sed -i '' "s/^theme = .*/theme = $GHOSTTY_THEME/" "$GHOSTTY_CONFIG"
+
+# ponytail: menu-click reload; Ghostty has no reload CLI on macOS. Needs
+# Accessibility permission for the app running this script (one-time grant).
+osascript -e 'tell application "System Events" to click menu item "Reload Configuration" of menu 1 of menu bar item "Ghostty" of menu bar 1 of process "Ghostty"' >/dev/null 2>&1 \
+  || echo "could not reload Ghostty - press cmd+shift+, in Ghostty (or grant Accessibility permission)"
+
+echo "switched to: $VSCODE_THEME (vscode) / $GHOSTTY_THEME (ghostty)"
