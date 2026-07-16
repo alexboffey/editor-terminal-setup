@@ -1,0 +1,33 @@
+#!/bin/sh
+# Switch the Claude Code chat persona by repointing ~/.claude/active-persona.md
+# at a persona file in this repo. CLAUDE.md imports that symlink.
+set -e
+
+SELF="$0"
+[ -L "$SELF" ] && SELF="$(readlink "$SELF")"
+PERSONAS_DIR="$(cd "$(dirname "$SELF")/../claude/personas" && pwd)"
+ACTIVE_LINK="$HOME/.claude/active-persona.md"
+
+if [ $# -eq 0 ]; then
+  current="$(readlink "$ACTIVE_LINK" 2>/dev/null || echo none)"
+  echo "personas:"
+  for f in "$PERSONAS_DIR"/*.md; do
+    name="$(basename "$f" .md)"
+    if [ "$f" = "$current" ]; then
+      echo "  * $name (active)"
+    else
+      echo "    $name"
+    fi
+  done
+  exit 0
+fi
+
+TARGET="$PERSONAS_DIR/$1.md"
+
+if [ ! -f "$TARGET" ]; then
+  echo "no persona '$1' in $PERSONAS_DIR" >&2
+  exit 1
+fi
+
+ln -sf "$TARGET" "$ACTIVE_LINK"
+echo "persona: $1 (picked up by new Claude Code sessions)"

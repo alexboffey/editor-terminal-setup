@@ -39,3 +39,24 @@ theme-toggle
 ```
 
 Run it again to switch back.
+
+## persona
+
+`bin/persona` switches the chat register Claude Code uses when talking to me. Persona files live in `claude/personas/`; the active one is symlinked to `~/.claude/active-persona.md`, which `~/.claude/CLAUDE.md` imports (same symlink pattern as the `tone` command uses for tone-of-voice). Personas only affect chat: code, commits, PRs, and anything Claude drafts as me are untouched.
+
+### Install
+
+```sh
+ln -sf "$PWD/bin/persona" ~/.local/bin/persona
+persona geezer
+```
+
+### Use
+
+```sh
+persona            # list personas, show active
+persona geezer     # east-end geezer, no rhyming slang
+persona standard   # plain senior-engineer register
+```
+
+New personas are just markdown files: drop `claude/personas/<name>.md` in and `persona <name>` picks it up. Switches apply to new Claude Code sessions.
