@@ -60,3 +60,45 @@ persona standard   # plain senior-engineer register
 ```
 
 New personas are just markdown files: drop `claude/personas/<name>.md` in and `persona <name>` picks it up. Switches apply to new Claude Code sessions.
+
+## claude
+
+`claude/` holds my global Claude Code config, a snapshot of `~/.claude` on my main machine. `bin/claude-setup` installs it.
+
+What's in it:
+
+- `CLAUDE.md` — global instructions (writing style, persona import, vault organisation)
+- `AGENTS.md` — agent orchestration notes
+- `settings.json` / `settings.local.json` — model, hooks, plugins, permissions (no secrets)
+- `agents/` — subagent definitions
+- `commands/` — slash commands
+- `hooks/` — hook scripts (worktree placement, memory persistence) plus `hooks.json`
+- `mcp-configs/mcp-servers.json` — MCP server catalogue, all credentials are `YOUR_*_HERE` placeholders
+- `rules/` — the ECC ruleset (common + web)
+- `scripts/` — ECC helper scripts
+- `skills/` — skills that live only in `~/.claude` (currently just `ecc`)
+- `personas/` — chat personas, managed by `bin/persona` (see above)
+
+Deliberately not included:
+
+- Work-internal skills and commands (GEEIQ-specific; this repo is public)
+- Skills symlinked from other repos (`~/Projects/ai-agents`, the Obsidian vault) — tracked there
+- Machine state: sessions, history, caches, plugin installs, memory, `~/.claude.json` (holds OAuth tokens)
+
+### Install
+
+```sh
+ln -sf "$PWD/bin/claude-setup" ~/.local/bin/claude-setup
+claude-setup
+```
+
+Copies the config files and dirs into `~/.claude` (rsync, so it overlays rather than wipes) and symlinks the standard persona if none is active. New Claude Code sessions pick it up.
+
+### Nvim
+
+`nvim/` is a copy of `~/.config/nvim` (lazy.nvim, catppuccin, nvim-tree). Install:
+
+```sh
+mkdir -p ~/.config/nvim
+cp -R nvim/ ~/.config/nvim/
+```

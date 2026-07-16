@@ -1,0 +1,26 @@
+#!/bin/sh
+# Install the global Claude Code config from this repo into ~/.claude.
+# Copies config files/dirs (agents, commands, hooks, rules, scripts, skills,
+# settings, CLAUDE.md). Personas are NOT copied — they stay in this repo and
+# ~/.claude/active-persona.md symlinks to them via bin/persona.
+set -e
+
+SELF="$0"
+[ -L "$SELF" ] && SELF="$(readlink "$SELF")"
+SRC="$(cd "$(dirname "$SELF")/../claude" && pwd)"
+DEST="$HOME/.claude"
+
+mkdir -p "$DEST"
+
+for f in CLAUDE.md AGENTS.md settings.json settings.local.json; do
+  cp "$SRC/$f" "$DEST/$f"
+done
+
+for d in agents commands hooks mcp-configs rules scripts skills; do
+  rsync -a "$SRC/$d/" "$DEST/$d/"
+done
+
+# default persona if none is active yet
+[ -e "$DEST/active-persona.md" ] || ln -s "$SRC/personas/standard.md" "$DEST/active-persona.md"
+
+echo "claude config installed to $DEST (restart Claude Code sessions to pick it up)"
