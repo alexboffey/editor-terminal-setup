@@ -96,7 +96,7 @@ Copies the config files and dirs into `~/.claude` (rsync, so it overlays rather 
 
 ### Nvim
 
-`nvim/` is a copy of `~/.config/nvim` (lazy.nvim, catppuccin, nvim-tree). Install:
+`nvim/` is a copy of `~/.config/nvim`. Based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) (`lazy` branch, Neovim 0.11 compatible) with personal additions in `lua/custom/plugins/` (catppuccin, nvim-tree, lualine, vim-tmux-navigator, markdown-preview). Install:
 
 ```sh
 mkdir -p ~/.config/nvim
