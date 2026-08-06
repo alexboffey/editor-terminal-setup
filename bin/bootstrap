@@ -1,0 +1,132 @@
+#!/bin/sh
+# bootstrap — install this whole setup onto a fresh macOS machine.
+#
+# Idempotent: safe to re-run. Anything it would overwrite is copied to
+# <file>.backup-<timestamp> first. Skips any step whose target app is missing.
+#
+#   ./bin/bootstrap          # everything
+#   ./bin/bootstrap fonts    # one or more steps by name
+#
+# Steps: bin fonts zsh git vim nvim ghostty vscode claude
+set -e
+
+SELF="$0"
+[ -L "$SELF" ] && SELF="$(readlink "$SELF")"
+REPO="$(cd "$(dirname "$SELF")/.." && pwd)"
+STAMP="$(date +%Y%m%d-%H%M%S)"
+
+GHOSTTY_DIR="$HOME/Library/Application Support/com.mitchellh.ghostty"
+VSCODE_DIR="$HOME/Library/Application Support/Code/User"
+
+say() { printf '\n==> %s\n' "$1"; }
+skip() { printf '    skipped: %s\n' "$1"; }
+
+# copy src -> dest, backing up dest if it already differs
+install_file() {
+  src="$1"; dest="$2"
+  mkdir -p "$(dirname "$dest")"
+  if [ -e "$dest" ] && ! cmp -s "$src" "$dest"; then
+    cp "$dest" "$dest.backup-$STAMP"
+    printf '    backed up %s\n' "$dest.backup-$STAMP"
+  fi
+  cp "$src" "$dest"
+  printf '    %s\n' "$dest"
+}
+
+step_bin() {
+  say "bin -> ~/.local/bin"
+  mkdir -p "$HOME/.local/bin"
+  for f in bootstrap claude-setup dev persona theme-toggle; do
+    ln -sf "$REPO/bin/$f" "$HOME/.local/bin/$f"
+    printf '    %s\n' "$HOME/.local/bin/$f"
+  done
+  case ":$PATH:" in
+    *":$HOME/.local/bin:"*) ;;
+    *) printf '    NOTE: add ~/.local/bin to PATH (the zsh step does this)\n' ;;
+  esac
+}
+
+step_fonts() {
+  say "fonts -> ~/Library/Fonts"
+  mkdir -p "$HOME/Library/Fonts"
+  # ponytail: variable-font files only, they cover every weight/width/slant
+  cp "$REPO"/fonts/*.ttf "$HOME/Library/Fonts/"
+  ls "$REPO"/fonts | sed 's|^|    |'
+}
+
+step_zsh() {
+  say "zsh -> ~/.zshrc"
+  [ -d "$HOME/.oh-my-zsh" ] || printf '    NOTE: oh-my-zsh not installed, see readme\n'
+  install_file "$REPO/zsh/.zshrc" "$HOME/.zshrc"
+  printf '    ACTION: replace every REPLACE_ME in ~/.zshrc with a real key\n'
+}
+
+step_git() {
+  say "git -> ~/.gitconfig"
+  install_file "$REPO/git/.gitconfig" "$HOME/.gitconfig"
+}
+
+step_vim() {
+  say "vim -> ~/.vimrc"
+  install_file "$REPO/vim/.vimrc" "$HOME/.vimrc"
+}
+
+step_nvim() {
+  say "nvim -> ~/.config/nvim"
+  if [ -d "$HOME/.config/nvim" ] && [ ! -e "$HOME/.config/nvim/init.lua" ]; then
+    mv "$HOME/.config/nvim" "$HOME/.config/nvim.backup-$STAMP"
+    printf '    backed up existing config\n'
+  fi
+  mkdir -p "$HOME/.config/nvim"
+  rsync -a "$REPO/nvim/" "$HOME/.config/nvim/"
+  printf '    %s (lazy.nvim installs plugins on first launch)\n' "$HOME/.config/nvim"
+}
+
+step_ghostty() {
+  say "ghostty -> config + custom themes"
+  if [ ! -d "$GHOSTTY_DIR" ] && ! [ -d /Applications/Ghostty.app ]; then
+    skip "Ghostty not installed (brew install --cask ghostty)"
+    return
+  fi
+  install_file "$REPO/ghostty/config" "$GHOSTTY_DIR/config.ghostty"
+  mkdir -p "$HOME/.config/ghostty/themes"
+  cp "$REPO"/ghostty/themes/* "$HOME/.config/ghostty/themes/"
+  ls "$REPO"/ghostty/themes | sed 's|^|    theme: |'
+  printf '    NOTE: Aura ships with Ghostty; the noctis-* themes are the ones copied above\n'
+}
+
+step_vscode() {
+  say "vscode -> settings + extensions"
+  if ! command -v code >/dev/null 2>&1; then
+    skip "the 'code' CLI is not on PATH (VS Code: Shell Command: Install 'code' command in PATH)"
+    return
+  fi
+  install_file "$REPO/vscode/settings.json" "$VSCODE_DIR/settings.json"
+  printf '    installing extensions (this takes a minute)...\n'
+  # each line is already a full `code --install-extension <id>` command
+  sh "$REPO/vscode/extensions.txt"
+}
+
+step_claude() {
+  say "claude -> ~/.claude"
+  sh "$REPO/bin/claude-setup"
+  ln -sf "$REPO/claude/personas/geezer.md" "$HOME/.claude/active-persona.md"
+  printf '    active persona: geezer\n'
+  printf '    NOTE: plugins (ponytail, official marketplace) reinstall themselves\n'
+  printf '          from settings.json on the next Claude Code launch\n'
+  printf '    NOTE: third-party skills are not vendored here, install them with:\n'
+  printf '          npx impeccable install\n'
+}
+
+ALL="bin fonts zsh git vim nvim ghostty vscode claude"
+STEPS="${*:-$ALL}"
+
+for s in $STEPS; do
+  case " $ALL " in
+    *" $s "*) "step_$s" ;;
+    *) echo "unknown step: $s (choose from: $ALL)" >&2; exit 1 ;;
+  esac
+done
+
+say "done"
+echo "Open a new shell, then run: theme-toggle, persona, dev"
