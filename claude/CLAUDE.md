@@ -42,6 +42,12 @@ Apply that voice in addition to (not instead of) the rules above. The rules abov
 
 I can switch which tone is active by running `tone` in any shell.
 
+# Git worktrees
+
+Put git worktrees in a `.worktrees/<repo-name>/` folder next to the main repo clone (e.g. a clone at `~/CheckpointGG/frontend` gets worktrees under `~/CheckpointGG/.worktrees/frontend/`). Repo skills that reference a worktree base dir should resolve relative to the clone like this, not to a hardcoded absolute path.
+
+Name the worktree after a short branch description or the Linear ticket (e.g. `eng-6726`, `rebrand-chart-palettes`). The `WorktreeCreate` hook creates the branch as `boff/<name>` (so `boff/eng-6726`, `boff/rebrand-chart-palettes`) while keeping the worktree directory flat. Do not add the `boff/` prefix yourself — the hook does it.
+
 # Obsidian vault organisation
 
 My Obsidian vault lives at `~/Documents/Obsidian Vault/`. Two top-level folders matter:

@@ -61,6 +61,31 @@ persona standard   # plain senior-engineer register
 
 New personas are just markdown files: drop `claude/personas/<name>.md` in and `persona <name>` picks it up. Switches apply to new Claude Code sessions.
 
+## dev
+
+`bin/dev` opens (or reattaches to) a tmux session named `dev` with a four-pane layout: nvim top-left, two plain terminals below it, and `claude` down the right-hand quarter.
+
+```sh
+ln -sf "$PWD/bin/dev" ~/.local/bin/dev
+dev
+```
+
+## zsh
+
+`zsh/.zshrc` is a copy of `~/.zshrc`. API keys and tokens are replaced with `REPLACE_ME` placeholders — fill them in locally after copying, never commit the real values.
+
+```sh
+cp zsh/.zshrc ~/.zshrc
+```
+
+## git
+
+`git/.gitconfig` holds the global git identity, `pull.rebase = false`, and a `git recents` alias for the last five branches checked out.
+
+```sh
+cp git/.gitconfig ~/.gitconfig
+```
+
 ## claude
 
 `claude/` holds my global Claude Code config, a snapshot of `~/.claude` on my main machine. `bin/claude-setup` installs it.

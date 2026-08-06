@@ -1,15 +1,14 @@
 {
   "terminal.integrated.shell.osx": "zsh",
   "workbench.iconTheme": "material-icon-theme",
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "editor.fontFamily": "Monaspace Neon Var, Fira Code, Menlo, Monaco, Consolas, 'Courier New', monospace",
-  "editor.fontLigatures": true,
-  "editor.lineHeight": 25,
+  "editor.lineHeight": 24,
   "files.autoSave": "onFocusChange",
   "auto-close-tag.enableAutoCloseTag": true,
   "emmet.triggerExpansionOnTab": true,
   "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
+    "javascript": "javascriptreact",
   },
   "workbench.colorCustomizations": {
     "activityBarBadge.background": "#80CBC4",
@@ -21,15 +20,20 @@
     "textLink.foreground": "#80CBC4",
     "progressBar.background": "#80CBC4",
     "pickerGroup.foreground": "#80CBC4",
-    "tab.activeBorder": "#80CBC4"
+    "tab.activeBorder": "#80CBC4",
   },
   "git.autofetch": true,
+  "php.suggest.basic": false,
   "editor.tabSize": 2,
   "prettier.tabWidth": 2,
   "gitlens.keymap": "alternate",
   "files.associations": {
     "*.pcss": "postcss",
-    "*.prisma": "prisma"
+    "*.prisma": "prisma",
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true,
   },
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
@@ -39,48 +43,77 @@
     "suppressLineUncommittedWarning": false,
     "suppressNoRepositoryWarning": false,
     "suppressResultsExplorerNotice": false,
-    "suppressShowKeyBindingsNotice": true
+    "suppressShowKeyBindingsNotice": true,
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "git.confirmSync": false,
   "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "github.copilot.enable": {
     "*": true,
-    "yaml": true,
     "plaintext": false,
-    "markdown": false
+    "markdown": false,
+    "scminput": false,
+    "yaml": true,
   },
   "editor.inlineSuggest.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "explorer.confirmDelete": false,
   "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
-  "workbench.colorTheme": "Ayu Adapta",
   "debug.javascript.autoAttachFilter": "smart",
   "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
+  "workbench.colorTheme": "Aura Dark",
+  "github.copilot.advanced": {},
+  "testing.openTesting": "neverOpen",
+  "github.copilot.editor.enableAutoCompletions": false,
+  "prisma.showPrismaDataPlatformNotification": false,
+  "continue.showInlineTip": false,
+  "scm.showHistoryGraph": false,
+  "continue.enableContinueForTeams": true,
+  "codium.editorButton": false,
+  "testing.automaticallyOpenTestResults": "neverOpen",
+  "yaml.schemas": {
+    "file:///Users/alexboffey/.vscode/extensions/continue.continue-1.2.15-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml",
+    ],
+  },
+  "claudeCode.preferredLocation": "sidebar",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1,
+  },
+  "claudeCode.selectedModel": "opus",
+  "playwright.reuseBrowser": false,
   "chat.disableAIFeatures": true,
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml",
+  ],
 }

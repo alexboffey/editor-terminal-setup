@@ -2,16 +2,17 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/alex.boffey/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
  
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="avit"
+# ZSH_THEME="avit"
 # ZSH_THEME="arrow"
-
+ZSH_THEME="agnoster"
+DEFAULT_USER=$USER
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -101,8 +102,44 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias yeet="rm -rf"
-alias cl='claude --dangerously-skip-permissions'
 
-# Load NVM
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# secret — real value lives only in the local ~/.zshrc, never committed
+export GH_REGISTRY_PACKAGES="ghp_REPLACE_ME"
+
+prompt_context() {
+  # Custom (Random emoji)
+  emojis=("🔥" "💀" "👑" "😎" "🦅" "🦆" "🦄" "🌈" "🍻" "🚀" "🍄" "🌘" "🔑" "🐊" "🌙")
+  RAND_EMOJI_N=$(( $RANDOM % ${#emojis[@]} + 1))
+  prompt_segment black default "${emojis[$RAND_EMOJI_N]} "
+}
+
+# bun completions
+[ -s "/Users/alexboffey/.bun/_bun" ] && source "/Users/alexboffey/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/alexboffey/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# Added by Antigravity
+export PATH="/Users/alexboffey/.antigravity/antigravity/bin:$PATH"
+
+# Linear Drafter API keys
+# secrets — real values live only in the local ~/.zshrc, never committed
+export LINEAR_API_KEY=lin_api_REPLACE_ME
+export GEMINI_API_KEY=REPLACE_ME
+
+export PATH="$HOME/.local/bin:$PATH"
+
+alias cl='claude --dangerously-skip-permissions'

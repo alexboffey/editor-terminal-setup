@@ -1,0 +1,7 @@
+[user]
+	email = alex@alexboffey.co.uk
+	name = Alex Boffey
+[pull]
+	rebase = false
+[alias]
+	recents = !git reflog | grep \"checkout:\" | head -n 5
