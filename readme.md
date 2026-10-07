@@ -173,3 +173,31 @@ npx impeccable install    # frontend design/craft skill, Apache 2.0
 ```
 
 The `ecc` skill set (agents, rules, scripts, skills) *is* vendored, under `claude/`, because it's installed by copying files rather than by a package manager.
+
+### Skill inventory
+
+`~/.claude/skills/` is mostly symlinks. Each skill is tracked in the repo it belongs to and linked into Claude's global dir, so this repo only vendors what has no other home:
+
+| Source | Skills | How it gets there |
+|---|---|---|
+| This repo (`claude/skills/`) | `ecc` | `bin/claude-setup` copies it |
+| `~/Projects/ai-agents` | `claude-skill-creator`, `code-standards-skill`, `documentation-skill` | symlinked from that repo |
+| Obsidian vault (`.claude/skills/`) | `obsidian-note`, `organise`, `find-stocks`, `stock-sentiment` and the other `ov-*` personal-vault skills | symlinked from the vault |
+| Work repos | repo-local skills (a11y audits, token migration, release and QA workflows) | symlinked from each repo; GEEIQ-internal, never vendored here |
+| Third-party | `impeccable`, `humanizer` | self-installing (see above) |
+
+Recreating the symlinks is manual on a new machine: clone the source repo, then `ln -s <repo>/skills/<name> ~/.claude/skills/<name>`.
+
+### Voice: persona vs tone
+
+Two separate layers, both driven by symlinks that `~/.claude/CLAUDE.md` references:
+
+- **Persona** is how Claude talks *to me* in chat. `bin/persona` (documented above) points `~/.claude/active-persona.md` at a file in `claude/personas/`. Chat only; never leaks into code or drafts.
+- **Tone of voice** is how Claude writes *as me* to other people (Slack, PRs, Linear, email). A `tone` command points `~/.claude/active-tone-of-voice.md` at one of the `* Tone of Voice.md` docs in my Obsidian vault (`ab/meta/`); those docs hold real openers, closers, sentence rhythm, and verbatim examples from messages I've actually sent. CLAUDE.md instructs Claude to load that file before drafting anything outbound. The `tone` script and the tone docs live in the vault repo, not here, because the docs contain personal writing samples. CLAUDE.md's banned list (em dashes, stock AI phrasing) outranks whatever the tone file shows.
+
+### Other customisations
+
+- `CLAUDE.md`: writing-style rules with a hard banned list, drafting rules, git worktree conventions, Obsidian vault routing
+- `hooks/create-worktree.sh`: `WorktreeCreate` hook that puts worktrees in `.worktrees/<repo>/<name>` next to the clone and prefixes branches `boff/`
+- `commands/`: personal slash commands (`update-goals`) on top of the ECC command set
+- `personas/`: currently `geezer` and `standard`
