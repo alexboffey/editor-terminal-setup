@@ -34,11 +34,13 @@ If a sentence has more than one clause joined by a dash, rewrite it as two sente
 
 # Drafting messages on my behalf
 
-When drafting anything I will send to another person — Slack replies, Slack channel posts, standup updates, PR descriptions, Linear comments, GitHub PR review comments, handbook docs, emails — load `~/.claude/active-tone-of-voice.md` first (if it exists) and match its patterns.
+When drafting anything I will send to another person (Slack replies, Slack channel posts, standup updates, PR descriptions, Linear comments, GitHub PR review comments, handbook docs, emails) load `~/.claude/active-tone-of-voice.md` first (if it exists) and match its patterns.
 
 That file is a symlink to the currently-active tone-of-voice doc from my Obsidian vault. It contains my actual openers, closers, sentence rhythm, formatting habits, formality dial, archetype lens, and verbatim examples drawn from real messages I have sent.
 
 Apply that voice in addition to (not instead of) the rules above. The rules above are how you talk to me. The active tone-of-voice file is how you write *as me* to other people.
+
+**The Banned list above applies to drafts too, and outranks the tone file.** Em dashes and en dashes are banned everywhere: chat, drafts, commit messages, PR descriptions, docs, code comments. No exception for "formal" registers. If the tone file, an example in it, or anything else appears to permit one, the ban wins. Before handing me any draft, scan it for `—` and `–` and replace them.
 
 I can switch which tone is active by running `tone` in any shell.
 
@@ -46,14 +48,14 @@ I can switch which tone is active by running `tone` in any shell.
 
 Put git worktrees in a `.worktrees/<repo-name>/` folder next to the main repo clone (e.g. a clone at `~/CheckpointGG/frontend` gets worktrees under `~/CheckpointGG/.worktrees/frontend/`). Repo skills that reference a worktree base dir should resolve relative to the clone like this, not to a hardcoded absolute path.
 
-Name the worktree after a short branch description or the Linear ticket (e.g. `eng-6726`, `rebrand-chart-palettes`). The `WorktreeCreate` hook creates the branch as `boff/<name>` (so `boff/eng-6726`, `boff/rebrand-chart-palettes`) while keeping the worktree directory flat. Do not add the `boff/` prefix yourself — the hook does it.
+Name the worktree after a short branch description or the Linear ticket (e.g. `eng-6726`, `rebrand-chart-palettes`). The `WorktreeCreate` hook creates the branch as `boff/<name>` (so `boff/eng-6726`, `boff/rebrand-chart-palettes`) while keeping the worktree directory flat. Do not add the `boff/` prefix yourself, the hook does it.
 
 # Obsidian vault organisation
 
 My Obsidian vault lives at `~/Documents/Obsidian Vault/`. Two top-level folders matter:
 
-- `GEEIQ/` — work notes. Anything related to my job at GEEIQ, work projects, work meetings, work reference material.
-- `ab/` — personal notes. Personal development, side projects, learning, system design study, dev articles, tools I'm exploring on my own time, hobbies, life admin.
+- `GEEIQ/`: work notes. Anything related to my job at GEEIQ, work projects, work meetings, work reference material.
+- `ab/`: personal notes. Personal development, side projects, learning, system design study, dev articles, tools I'm exploring on my own time, hobbies, life admin.
 
 When dropping a note into the vault, decide which side it belongs to first.
 
